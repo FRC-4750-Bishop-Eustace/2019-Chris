@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.Commands.Extend;
+import frc.Commands.Retract;
 
 public class OI extends RobotMap {
 
@@ -19,7 +20,7 @@ public class OI extends RobotMap {
     public OI(){
 
         releasePiston.whenPressed(new Extend());
-
+        retractPiston.whenPressed(new Retract());
     }
     
 
