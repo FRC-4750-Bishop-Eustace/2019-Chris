@@ -12,6 +12,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.Joystick;                                          
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * Add your docs here.
@@ -24,6 +25,7 @@ public class DriveTrain extends Subsystem {
     //Controller Groups
     SpeedControllerGroup leftMotors, rightMotors;
 
+    DifferentialDrive differentialDrive;
 
     public DriveTrain(int frontLeftMotorPort, int frontRightMotorPort, int backLeftMotorPort,  int backRightMotorPort) {
 
@@ -38,6 +40,8 @@ public class DriveTrain extends Subsystem {
 
       leftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
       rightMotors = new SpeedControllerGroup(frontRightMotor, backRightMotor);
+    
+      differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
     } 
 
 
@@ -45,9 +49,16 @@ public class DriveTrain extends Subsystem {
           //Set motor speeds to joystick values
           arcadeDrive(j.getY(), j.getThrottle());
     }
+
+    public void setDriveSpeed(double speed) {
+      
+
+
+    }
     //default arcade drive
 public void arcadeDrive(double forwardSpeed, double rightSpeed) {
-    arcadeDrive(forwardSpeed, rightSpeed);
+
+    differentialDrive.arcadeDrive(forwardSpeed, rightSpeed);
 }
   
 

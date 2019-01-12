@@ -10,6 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.Subsystems.DriveTrain;
+import frc.Subsystems.Hatch;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,10 +22,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot {
   //Instatntiating Drivetrain
-  //public static final DriveTrain DriveTrain = new DriveTrain(RobotMap.Front_Left_Motor_Port, RobotMap.Front_Right_Motor_Port, RobotMap.Back_Left_Motor_Port, RobotMap.Back_Right_Motor_Port);
+  public static final DriveTrain driveTrain = new DriveTrain(RobotMap.Front_Left_Motor_Port, RobotMap.Front_Right_Motor_Port, 
+  RobotMap.Back_Left_Motor_Port, RobotMap.Back_Right_Motor_Port);
+
+  //instantiation the hatch intake
+  public static Hatch hatch = new Hatch();
+
   private static final String kDefaultAuto = "Default";
+ 
   private static final String kCustomAuto = "My Auto";
+
   private String m_autoSelected;
+
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
   /**
