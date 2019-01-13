@@ -1,10 +1,3 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package frc.Subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -20,30 +13,32 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class DriveTrain extends Subsystem {
 
     //Motors
-    WPI_TalonSRX frontLeftMotor,  backLeftMotor, frontRightMotor, backRightMotor;
+    WPI_TalonSRX frontLeftMotor, middleLeftMotor, backLeftMotor, frontRightMotor, middleRightMotor, backRightMotor;
 
     //Controller Groups
     SpeedControllerGroup leftMotors, rightMotors;
 
     DifferentialDrive differentialDrive;
 
-    public DriveTrain(int frontLeftMotorPort, int frontRightMotorPort, int backLeftMotorPort,  int backRightMotorPort) {
+    public DriveTrain(int frontLeftMotorPort, int frontRightMotorPort, int middleRightMotorPort, int backLeftMotorPort, 
+    int middleLeftMotorPort, int backRightMotorPort) {
 
       //Initialize motors
 
       frontLeftMotor = new WPI_TalonSRX(frontLeftMotorPort);
       frontRightMotor = new WPI_TalonSRX(frontRightMotorPort);
+      middleLeftMotor = new WPI_TalonSRX(middleLeftMotorPort);
+      middleRightMotor = new WPI_TalonSRX(middleRightMotorPort);
       backLeftMotor = new WPI_TalonSRX(backLeftMotorPort);
       backRightMotor = new WPI_TalonSRX(backRightMotorPort);
 
       //Initialize controller groups
 
-      leftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
-      rightMotors = new SpeedControllerGroup(frontRightMotor, backRightMotor);
+      leftMotors = new SpeedControllerGroup(frontLeftMotor, middleLeftMotor, backLeftMotor);
+      rightMotors = new SpeedControllerGroup(frontRightMotor, middleRightMotor, backRightMotor);
     
       differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
     } 
-
 
     public void singleDrive(Joystick j) {
           //Set motor speeds to joystick values
@@ -52,8 +47,6 @@ public class DriveTrain extends Subsystem {
 
     public void setDriveSpeed(double speed) {
       
-
-
     }
     //default arcade drive
 public void arcadeDrive(double forwardSpeed, double rightSpeed) {

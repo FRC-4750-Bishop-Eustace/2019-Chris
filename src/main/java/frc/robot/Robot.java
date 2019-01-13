@@ -1,10 +1,3 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -22,8 +15,8 @@ import frc.Subsystems.Hatch;
  */
 public class Robot extends TimedRobot {
   //Instatntiating Drivetrain
-  public static final DriveTrain driveTrain = new DriveTrain(RobotMap.Front_Left_Motor_Port, RobotMap.Front_Right_Motor_Port, 
-  RobotMap.Back_Left_Motor_Port, RobotMap.Back_Right_Motor_Port);
+  public static final DriveTrain driveTrain = new DriveTrain(RobotMap.Front_Left_Motor_Port, RobotMap.Front_Right_Motor_Port, RobotMap.Middle_Left_Motor_Port,
+ RobotMap.Middle_Right_Motor_Port, RobotMap.Back_Left_Motor_Port, RobotMap.Back_Right_Motor_Port);
 
   //instantiation the hatch intake
   public static Hatch hatch = new Hatch();

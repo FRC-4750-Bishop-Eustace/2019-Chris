@@ -9,8 +9,10 @@ public static final int Right_Joystick_Port = 1;
 //Motor Ports
 public static final int Front_Left_Motor_Port = 0;
 public static final int Front_Right_Motor_Port = 1;
-public static final int Back_Left_Motor_Port = 2;
-public static final int Back_Right_Motor_Port = 3;
+public static final int Middle_Left_Motor_Port = 2;
+public static final int Middle_Right_Motor_Port = 3;
+public static final int Back_Left_Motor_Port = 4;
+public static final int Back_Right_Motor_Port = 5;
 
  //creating the piston 
  public static final int hatchPistonExtend = 0;
