@@ -1,35 +1,36 @@
-package frc.Subsystems;
+package frc.subsystems;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.RobotMap;
+
 /**
- * Add your docs here.
+ * This class manages the hatch mechanism
+ * 
  */
 public class Hatch extends Subsystem {
 
-  DoubleSolenoid hatchPiston;
-public static final Subsystem pistonExtend = null;
+	// Create piston
+	public Solenoid hatchPistons;
 
+	public Hatch() {
+        // Initialize piston to ports
+        hatchPistons = new Solenoid(RobotMap.HATCH_PISTON_ID);
+    }
 
-  public Hatch() {
+    /**
+     * Toggles the hatch piston
+     */
+    public void toggle() {
+        if(hatchPistons.get()) {
+            hatchPistons.set(false);
+        }else {
+            hatchPistons.set(true);
+        }
+    }
 
-    hatchPiston = new DoubleSolenoid(RobotMap.hatchPistonExtend, RobotMap.hatchPistonRetract);
-  }
-
-  public void pistonExtend() {
-    hatchPiston.set(Value.kForward);
-  }
-  public void pistonRetract(){
-    hatchPiston.set(Value.kReverse);
-  }
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
+	@Override
+	public void initDefaultCommand() {
+		
+	}
 }

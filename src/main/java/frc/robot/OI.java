@@ -3,25 +3,23 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.Commands.Extend;
-import frc.Commands.Retract;
+import frc.commands.SwitchStreamMode;
+import frc.commands.ToggleHatch;
 
-public class OI extends RobotMap {
+/**
+ * Handles all of the joystick inputs
+ */
+public class OI {
 
-    //Creating the drivesticks
-    public static Joystick driveStick = new Joystick(RobotMap.Left_Joystick_Port);
-    
-   // Buttons for the 
-    Button releasePiston = new JoystickButton(driveStick, 2);
-    Button retractPiston = new JoystickButton(driveStick, 3);
+    // Joysticks
+    public static Joystick driveStick = new Joystick(RobotMap.DRIVESTICK_PORT);
 
+    // Buttons
+    Button toggleHatchButton = new JoystickButton(driveStick, 2);
+    Button switchStreamMode = new JoystickButton(driveStick, 3);
 
-    public OI(){
-
-        releasePiston.whenPressed(new Extend());
-        retractPiston.whenPressed(new Retract());
+    public OI() {
+        toggleHatchButton.whenReleased(new ToggleHatch());
+        switchStreamMode.whenReleased(new SwitchStreamMode());
     }
-    
-
-
 }

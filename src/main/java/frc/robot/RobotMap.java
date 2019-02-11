@@ -2,20 +2,28 @@ package frc.robot;
 
 public class RobotMap {
     
-//Joystick Ports
-public static final int Left_Joystick_Port = 0;
-public static final int Right_Joystick_Port = 1;
+ // Joystick ports
+ public static final int DRIVESTICK_PORT = 0;
 
-//Motor Ports
-public static final int Front_Left_Motor_Port = 0;
-public static final int Front_Right_Motor_Port = 1;
-public static final int Middle_Left_Motor_Port = 2;
-public static final int Middle_Right_Motor_Port = 3;
-public static final int Back_Left_Motor_Port = 4;
-public static final int Back_Right_Motor_Port = 5;
+ // Drive train motor ports
+ public static final int LEFT_MOTOR_ONE_ID = 0;
+ public static final int LEFT_MOTOR_TWO_ID = 1;
+ public static final int RIGHT_MOTOR_ONE_ID = 2;
+ public static final int RIGHT_MOTOR_TWO_ID = 3;
 
- //creating the piston 
- public static final int hatchPistonExtend = 0;
- public static final int hatchPistonRetract = 1;
+ // Drive train constants
+ public static final double ENC_CONST = (6 * Math.PI) / 4096;
+
+ // Digital sensor ports
+ public static final int HATCH_SENSOR = 0;
+ public static final int CARGO_SENSOR = 1;
+ public static final int ULTRASONIC_TRIGGER = 2;
+ public static final int ULTRASONIC_ECHO = 3;
+
+ // Analog sensor ports
+ public static final int PRESSURE_SENSOR = 0;
+
+ // Hatch piston IDs
+ public static final int HATCH_PISTON_ID = 0;
 
 }
