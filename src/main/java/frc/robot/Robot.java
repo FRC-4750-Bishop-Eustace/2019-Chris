@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.subsystems.DriveTrain;
 import frc.subsystems.Hatch;
 import frc.subsystems.Limelight;
+import frc.subsystems.Wrist;
 
 public class Robot extends TimedRobot {
 
@@ -15,6 +16,7 @@ public class Robot extends TimedRobot {
   // Initialize mechanisms
   public static DriveTrain driveTrain = new DriveTrain(RobotMap.LEFT_MOTOR_ONE_ID, RobotMap.LEFT_MOTOR_TWO_ID, RobotMap.RIGHT_MOTOR_ONE_ID, RobotMap.RIGHT_MOTOR_TWO_ID);
   public static Hatch hatch = new Hatch();
+  public static Wrist wrist = new Wrist();
   DigitalInput lim = new DigitalInput(0);
 
   // Initialize OI

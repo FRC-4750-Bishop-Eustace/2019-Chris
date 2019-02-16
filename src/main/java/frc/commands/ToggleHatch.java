@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 /**
- * Toggles the pistons on the hatch mechanism
+ * :) -Ed
  */
 public class ToggleHatch extends InstantCommand {
 
