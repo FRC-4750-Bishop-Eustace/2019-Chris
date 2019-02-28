@@ -24,7 +24,7 @@ public class RobotMap {
  public static final int PRESSURE_SENSOR = 0;
 
  // Hatch piston IDs
- public static final int HATCH_PISTON_ID = 0;
+ public static final int HATCH_PISTON_ID = 6;
 
 
 }

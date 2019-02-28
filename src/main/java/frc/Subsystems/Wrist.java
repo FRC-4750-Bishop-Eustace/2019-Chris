@@ -14,7 +14,7 @@ public class Wrist extends Subsystem {
     public Wrist() {
         //defining solenoid ports (forwardChannel, reverseChannel) (should be but check with electrical)
         //solenoid = new DoubleSolenoid(1, 0);
-        solenoid2 = new DoubleSolenoid(4, 5);
+        solenoid2 = new DoubleSolenoid(5, 4);
     }
 
     //this extends the second solenoid
