@@ -20,11 +20,11 @@ public class RobotMap {
  public static final int ULTRASONIC_TRIGGER = 2;
  public static final int ULTRASONIC_ECHO = 3;
 
+ 
  // Analog sensor ports
  public static final int PRESSURE_SENSOR = 0;
 
  // Hatch piston IDs
  public static final int HATCH_PISTON_ID = 6;
-
 
 }

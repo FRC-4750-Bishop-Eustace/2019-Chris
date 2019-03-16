@@ -17,7 +17,6 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain(RobotMap.LEFT_MOTOR_ONE_ID, RobotMap.LEFT_MOTOR_TWO_ID, RobotMap.RIGHT_MOTOR_ONE_ID, RobotMap.RIGHT_MOTOR_TWO_ID);
   public static Hatch hatch = new Hatch();
   public static Wrist wrist = new Wrist();
-  DigitalInput lim = new DigitalInput(0);
 
   // Initialize OI
   public static OI oi = new OI();
@@ -29,7 +28,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     Scheduler.getInstance().run();
-    System.out.println(!lim.get());
+    System.out.println(hatch.get());
   }
 
   @Override
